@@ -1,7 +1,18 @@
 #include "GameObject.h"
+#include "Collider.h"
 
-GameObject::GameObject() {
-	Vector3 _location(0.f, 0.f, 0.f);
-	Vector3 _scale(0.f, 0.f, 0.f);
+GameObject::GameObject() : _location(0, 0, 0), _scale(0, 0, 0), _name(""), _collider(nullptr)
+{
 }
-GameObject::~GameObject() {}
+GameObject::~GameObject() 
+{
+	if (_collider != nullptr) {
+		delete _collider;
+	}
+}
+
+void GameObject::CreateCollider()
+{
+	_collider = new Collider;
+	_collider->_owner = this;
+}

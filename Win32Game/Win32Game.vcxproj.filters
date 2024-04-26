@@ -40,6 +40,15 @@
     <Filter Include="소스 파일\Core">
       <UniqueIdentifier>{44019885-62dc-4110-8bd0-a23fff05d836}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\TestGameScene">
+      <UniqueIdentifier>{18b1fba5-eed3-447f-a3a4-50921e6ec7b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component">
+      <UniqueIdentifier>{4470e2b5-3c01-4f37-a52d-c504978d2bd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Component\Collider">
+      <UniqueIdentifier>{2507b58f-9bcb-4459-a011-23690db575eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -49,9 +58,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Win32GameProject.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="globalheader.h">
@@ -93,6 +99,12 @@
     <ClInclude Include="PathManager.h">
       <Filter>소스 파일\Path</Filter>
     </ClInclude>
+    <ClInclude Include="Win32GameProject.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>소스 파일\Component\Collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Win32Game.rc">
@@ -108,9 +120,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Win32GameProject.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="ResourceManager.cpp">
       <Filter>소스 파일\Content</Filter>
     </ClCompile>
@@ -146,6 +155,12 @@
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
       <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32GameProject.cpp">
+      <Filter>소스 파일\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>소스 파일\Component\Collider</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
