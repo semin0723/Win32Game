@@ -9,14 +9,14 @@ Vector3::Vector3(float x, float y, float z) {
 	_z = z;
 }
 
-const float Vector3::Magnitude()
+const float Vector3::Magnitude() const
 {
 	return sqrt(_x * _x + _y * _y + _z * _z);
 }
 
-Vector3 Vector3::Normalized()
+Vector3 Vector3::Normalized() const
 {
-	if (Magnitude() == 0) return Vector3(0, 0, 0);
+	if (Magnitude() == 0) return Vector3();
 	return *this / Magnitude();
 }
 
