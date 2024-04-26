@@ -40,8 +40,9 @@ void SceneManager::InitScene() {
 void SceneManager::update() {
 	//_curScene->update();
 }
-void SceneManager::render(HDC _bdc) {
-	//_curScene->render(mainDC, hIns);
+
+void SceneManager::render() {
+	//_curScene->render();
 }
 
 void SceneManager::LoadScene(int idx)

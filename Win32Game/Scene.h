@@ -1,9 +1,4 @@
 #pragma once
-#include "Vector.hpp"
-#include "globalheader.h"
-#include "GameObject.h"
-#include "Win32GameProject.h"
-#include "PathManager.h"
 #include "globalheader.h"
 #include "GameObject.h"
 
@@ -21,7 +16,7 @@ public:
 	virtual void end() = 0;
 
 	void update();
-	void render(HDC _bdc);
+	void render();
 
 protected:
 	void AddObject(GameObject* obj, LAYER_GROUP layer) { _GameObjects[(int)layer].push_back(obj); }

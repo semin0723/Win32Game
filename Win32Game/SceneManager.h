@@ -1,8 +1,5 @@
 #pragma once
 #include "globalheader.h"
-#include "LobbyScene.h"
-#include "MainMenu.h"
-#include "Win32GameProject.h"
 
 class Scene;
 
@@ -16,7 +13,7 @@ public:
 	static void DestroyInstance();
 	void InitScene();
 	void update();
-	void render(HDC _bdc);
+	void render();
 	void LoadScene(int idx);
 
 private:
