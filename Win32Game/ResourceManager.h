@@ -12,11 +12,10 @@ public:
 	static ResourceManager* GetInstance();
 	static void DestroyInstance();
 
-	void InitTexture();
-	Texture& GetTexture(const std::wstring& key, const std::wstring& path);
+	Texture* GetTexture(const std::wstring& key, const std::wstring& path);
 
 private:
 	static ResourceManager* instance;
-	
+	std::map<std::wstring, Texture*> _Textures;
 };
 

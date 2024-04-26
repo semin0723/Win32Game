@@ -28,7 +28,7 @@ void PathManager::InitPath()
 {
 	GetCurrentDirectory(255, _ContentPath);
 
-	for (int i = wcslen(_ContentPath) - 1; i >= 0; i--) {
+	for (size_t i = wcslen(_ContentPath) - 1; i >= 0; i--) {
 		if (_ContentPath[i] == '\\') {
 			_ContentPath[i] = '\0';
 			break;

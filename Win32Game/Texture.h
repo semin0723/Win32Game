@@ -4,10 +4,7 @@
 
 class Texture : public GameResource {
 public:
-	Texture();
-	~Texture();
-
-	void Load();
+	void Load(const std::wstring& filepath);
 
 	LONG Width() { return _BitInfo.bmWidth; }
 	LONG Height() { return _BitInfo.bmHeight; }
@@ -17,4 +14,9 @@ private:
 	HDC _DC;
 	HBITMAP _Bitmap;
 	BITMAP _BitInfo;
+
+	Texture();
+	~Texture();
+
+	friend class ResourceManager;
 };
