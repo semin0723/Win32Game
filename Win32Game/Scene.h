@@ -16,6 +16,7 @@ public:
 	virtual void end() = 0;
 
 	void update();
+	void finalupdate();
 	void render();
 
 protected:

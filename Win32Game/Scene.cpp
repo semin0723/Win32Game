@@ -21,6 +21,15 @@ void Scene::update() {
 	}
 }
 
+void Scene::finalupdate()
+{
+	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
+		for (int j = 0; j < _GameObjects[i].size(); j++) {
+			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->finalupdate();
+		}
+	}
+}
+
 void Scene::render() {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
 		for (int j = 0; j < _GameObjects[i].size(); j++) {

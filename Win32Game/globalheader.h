@@ -24,3 +24,21 @@ enum class SCENE_LAYER {
 
 	END,
 };
+
+enum class BRUSH_TYPE {
+	HOLLOW,
+
+	END,
+};
+
+enum class PEN_TYPE {
+	RED,
+	GREEN,
+	BLUE,
+
+	END,
+};
+
+#ifndef IGNORE_RENDERSYSTEM
+#include "RenderSystem.h"
+#endif

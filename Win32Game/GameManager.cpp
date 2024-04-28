@@ -39,7 +39,7 @@ namespace game
 	void GameManager::Render()
 	{
 		RenderSystem::GetInstance()->StartDraw();
-		SceneManager::GetInstance()->render(RenderSystem::GetInstance()->_backDC);
+		SceneManager::GetInstance()->render();
 		RenderSystem::GetInstance()->EndDraw();
 	}
 	void GameManager::Finalize()
@@ -60,11 +60,11 @@ namespace game
 
 				if (msg.message == WM_KEYDOWN)
 				{
-					InputSystem::GetInstance()->KeyDown(msg.wParam);
+					InputSystem::GetInstance()->KeyDown((UINT)msg.wParam);
 				}
 				else if (msg.message == WM_KEYUP)
 				{
-					InputSystem::GetInstance()->KeyUp(msg.wParam);
+					InputSystem::GetInstance()->KeyUp((UINT)msg.wParam);
 				}
 				else
 				{

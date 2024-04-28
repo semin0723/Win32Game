@@ -39,6 +39,7 @@ void SceneManager::InitScene() {
 
 void SceneManager::update() {
 	//_curScene->update();
+	//_curScene->finalupdate();
 }
 
 void SceneManager::render() {

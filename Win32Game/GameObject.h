@@ -23,8 +23,12 @@ public:
 	std::string GetName() const { return _name; }
 	bool Enable() { return _Enable; }
 
+	virtual void finalupdate() final;
 	virtual void update() = 0;
 	virtual void render() = 0;
+
+	void CompnentRender();
+	Collider* GetCollider() { return _collider; }
 
 private:
 	Vector3 _location;

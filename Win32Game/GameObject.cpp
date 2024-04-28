@@ -16,3 +16,17 @@ void GameObject::CreateCollider()
 	_collider = new Collider;
 	_collider->_owner = this;
 }
+
+void GameObject::finalupdate()
+{
+	if (_collider != nullptr) {
+		_collider->finalupdate();
+	}
+}
+
+void GameObject::CompnentRender()
+{
+	if (_collider != nullptr) {
+		_collider->render();
+	}
+}

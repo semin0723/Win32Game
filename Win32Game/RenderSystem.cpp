@@ -4,13 +4,27 @@
 
 RenderSystem* RenderSystem::instance = nullptr;
 
-RenderSystem::RenderSystem() {
+RenderSystem::RenderSystem() 
+	: _hdc(0),
+	  _backDC(0),
+	  _hWnd(0), 
+	  _rect{},
+	  _hInstance(0),
+	  _MainBitmap(0),
+	  _OldBitmap(0),
+	  _Brush{},
+	  _Pen{}
+{
 }
 
 RenderSystem::~RenderSystem() {
 	DeleteDC(_backDC);
 	ReleaseDC(_hWnd, _hdc);
 	DeleteObject(_MainBitmap);
+
+	for (int i = 0; i < (int)PEN_TYPE::END; i++) {
+		DeleteObject(_Pen[i]);
+	}
 }
 
 RenderSystem* RenderSystem::GetInstance() {
@@ -27,6 +41,15 @@ void RenderSystem::DestroyInstance() {
 	}
 }
 
+void RenderSystem::CreateBrushPen()
+{
+	_Brush[(int)BRUSH_TYPE::HOLLOW] = (HBRUSH)GetStockObject(HOLLOW_BRUSH);
+
+	_Pen[(int)PEN_TYPE::RED] = (HPEN)CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	_Pen[(int)PEN_TYPE::GREEN] = (HPEN)CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	_Pen[(int)PEN_TYPE::BLUE] = (HPEN)CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+}
+
 void RenderSystem::InitRender() {
 	_hInstance = global::GetWinApp().GetInstance();
 	_hWnd = global::GetWinApp().GetWindow();
@@ -38,6 +61,8 @@ void RenderSystem::InitRender() {
 	_OldBitmap = (HBITMAP)SelectObject(_backDC, _MainBitmap);
 	
 	DeleteObject(_OldBitmap);
+
+	CreateBrushPen();
 }
 
 void RenderSystem::StartDraw() {
