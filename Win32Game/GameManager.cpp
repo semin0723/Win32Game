@@ -5,6 +5,7 @@
 #include "TimeSystem.h"
 #include "RenderSystem.h"
 #include "ResourceManager.h"
+#include "CollisionManager.h"
 
 namespace game
 {
@@ -22,12 +23,14 @@ namespace game
 		RenderSystem::GetInstance()->InitRender();
 		PathManager::GetInstance()->InitPath();
 		SceneManager::GetInstance()->InitScene();
+		CollisionManager::GetInstance()->Init();
 	}
 
 	void GameManager::Update()
 	{
 		InputSystem::GetInstance()->updateMouse();
 		SceneManager::GetInstance()->update();
+		CollisionManager::GetInstance()->update();
 		InputSystem::GetInstance()->ResetInput();
 	}
 
