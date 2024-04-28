@@ -34,7 +34,7 @@ void TimeManager::UpdateTime()
 	_prevTime = _curTime;
 	QueryPerformanceCounter(&_curTime);
 
-	_deltaTime = (float)(_curTime.QuadPart - _prevTime.QuadPart) / ((float)(_frequency.QuadPart) / 1000.0);
+	_deltaTime = (float)(_curTime.QuadPart - _prevTime.QuadPart) / ((float)(_frequency.QuadPart) / 1000.0f);
 }
 
 const float TimeManager::GetFrameRate()

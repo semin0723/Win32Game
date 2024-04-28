@@ -24,10 +24,10 @@ void Collider::render()
 	HBRUSH oldbrush = (HBRUSH)SelectObject(RenderSystem::GetInstance()->_backDC, hollowbrush);
 
 	Rectangle(RenderSystem::GetInstance()->_backDC,
-		_ColliderPos._x - _Scale._x / 2,
-		_ColliderPos._y - _Scale._y / 2,
-		_ColliderPos._x + _Scale._x / 2,
-		_ColliderPos._y + _Scale._y / 2
+		(int)(_ColliderPos._x - _Scale._x / 2.f),
+		(int)(_ColliderPos._y - _Scale._y / 2.f),
+		(int)(_ColliderPos._x + _Scale._x / 2.f),
+		(int)(_ColliderPos._y + _Scale._y / 2.f)
 		);
 
 	SelectObject(RenderSystem::GetInstance()->_backDC, oldpen);
