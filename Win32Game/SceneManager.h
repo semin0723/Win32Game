@@ -15,6 +15,7 @@ public:
 	void update();
 	void render();
 	void LoadScene(int idx);
+	const Scene* GetCurScene() const { return _curScene; }
 
 private:
 	static SceneManager* instance;

@@ -1,5 +1,6 @@
 #pragma once
 #include "globalheader.h"
+#include "Collider.h"
 
 class CollisionManager
 {
@@ -19,5 +20,10 @@ private:
 	static CollisionManager* instance;
 
 	UINT _CollisionMatrix[(int)LAYER_GROUP::END];
+
+
+	void CollisionGroupUpdate(LAYER_GROUP a, LAYER_GROUP b);
+
+	bool OnCollisionEnter(Collider* a, Collider* b);
 };
 

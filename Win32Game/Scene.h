@@ -19,6 +19,8 @@ public:
 	void finalupdate();
 	void render();
 
+	const std::vector<GameObject*>& GetGroupObject(LAYER_GROUP group) const { return _GameObjects[(int)group]; }
+
 protected:
 	void AddObject(GameObject* obj, LAYER_GROUP layer) { _GameObjects[(int)layer].push_back(obj); }
 
