@@ -18,6 +18,7 @@ public:
 	void update();
 	void finalupdate();
 	void render();
+	void SceneEnd();
 
 	const std::vector<GameObject*>& GetGroupObject(LAYER_GROUP group) const { return _GameObjects[(int)group]; }
 

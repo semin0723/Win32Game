@@ -1,8 +1,19 @@
 #include "Collider.h"
 #include "RenderSystem.h"
 
-Collider::Collider() : _owner(nullptr)
+UINT Collider::_NextID = 0;
+
+Collider::Collider() : _owner(nullptr), _ID(_NextID++)
 {
+}
+
+Collider::Collider(const Collider& origin) :
+	_owner(nullptr),
+	_Offset(origin._Offset),
+	_Scale(origin._Scale),
+	_ID(_NextID++)
+{
+
 }
 
 Collider::~Collider()
@@ -33,4 +44,19 @@ void Collider::render()
 	SelectObject(RenderSystem::GetInstance()->_backDC, oldpen);
 	SelectObject(RenderSystem::GetInstance()->_backDC, oldbrush);
 	
+}
+
+void Collider::OnCollisionEnter(Collider* collider)
+{
+
+}
+
+void Collider::OnCollision(Collider* collider)
+{
+
+}
+
+void Collider::OnCollisionExit(Collider* collider)
+{
+
 }
