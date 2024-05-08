@@ -24,7 +24,7 @@ void GameObject::finalupdate()
 	}
 }
 
-void GameObject::CompnentRender()
+void GameObject::ComponentRender()
 {
 	if (_collider != nullptr) {
 		_collider->render();

@@ -27,7 +27,7 @@ public:
 	virtual void update() = 0;
 	virtual void render() = 0;
 
-	void CompnentRender();
+	void ComponentRender();
 	Collider* GetCollider() { return _collider; }
 
 private:
