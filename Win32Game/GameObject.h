@@ -12,15 +12,15 @@ public:
 	GameObject();
 	virtual ~GameObject();
 
-	void SetLocation(const Vector3& loc) { _location = loc; }
-	void SetScale(const Vector3& scale) { _scale = scale; }
-	void Setname(const std::string& name) { _name = name; }
+	void SetLocation(const Vector3& loc) { _Location = loc; }
+	void SetScale(const Vector3& scale) { _Scale = scale; }
+	void Setname(const std::wstring& name) { _Name = name; }
 	void SetEnable(bool state) { _Enable = state; }
 	void CreateCollider();
 
-	Vector3 GetLocation() const { return Vector3(_location); }
-	Vector3 GetScale() const { return Vector3(_scale); }
-	std::string GetName() const { return _name; }
+	Vector3 GetLocation() const { return Vector3(_Location); }
+	Vector3 GetScale() const { return Vector3(_Scale); }
+	std::wstring GetName() const { return _Name; }
 	bool Enable() { return _Enable; }
 
 	virtual void FinalUpdate() final;
@@ -32,15 +32,15 @@ public:
 	virtual void OnCollisionExit(Collider* collider) {}
 
 	void ComponentRender();
-	Collider* GetCollider() { return _collider; }
+	Collider* GetCollider() { return _Collider; }
 
 private:
-	Vector3 _location;
-	Vector3 _scale;
-	std::string _name;
+	Vector3 _Location;
+	Vector3 _Scale;
+	std::wstring _Name;
 	bool _Enable = true;
 
-	Collider* _collider;
+	Collider* _Collider;
 };
 
 /*

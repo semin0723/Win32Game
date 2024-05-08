@@ -1,32 +1,32 @@
 #include "GameObject.h"
 #include "Collider.h"
 
-GameObject::GameObject() : _location(0, 0, 0), _scale(0, 0, 0), _name(""), _collider(nullptr)
+GameObject::GameObject() : _Location(0, 0, 0), _Scale(0, 0, 0), _Name(L""), _Collider(nullptr)
 {
 }
 GameObject::~GameObject() 
 {
-	if (_collider != nullptr) {
-		delete _collider;
+	if (_Collider != nullptr) {
+		delete _Collider;
 	}
 }
 
 void GameObject::CreateCollider()
 {
-	_collider = new Collider;
-	_collider->_Owner = this;
+	_Collider = new Collider;
+	_Collider->_Owner = this;
 }
 
 void GameObject::FinalUpdate()
 {
-	if (_collider != nullptr) {
-		_collider->FinalUpdate();
+	if (_Collider != nullptr) {
+		_Collider->FinalUpdate();
 	}
 }
 
 void GameObject::ComponentRender()
 {
-	if (_collider != nullptr) {
-		_collider->Render();
+	if (_Collider != nullptr) {
+		_Collider->Render();
 	}
 }

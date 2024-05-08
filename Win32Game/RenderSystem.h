@@ -11,7 +11,7 @@ public:
 	HDC _backDC;
 	HWND _hWnd;
 	RECT _rect;
-	HInstance _hInstance;
+	HINSTANCE _hInstance;
 	HBITMAP _MainBitmap;
 	HBITMAP _OldBitmap;
 

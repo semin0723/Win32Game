@@ -8,13 +8,13 @@ public:
 	WinApp() = default;
 	~WinApp() = default;
 
-	void Initialize(HInstance hInstance);
+	void Initialize(HINSTANCE hInstance);
 
 	void Run();
 
 	void Finalize();
 
-	HInstance GetInstance() const { return m_hInstance; }
+	HINSTANCE GetInstance() const { return m_hInstance; }
 
 	HWND GetWindow() const { return m_hWnd; }
 
@@ -25,7 +25,7 @@ public:
 
 private:
 
-	HInstance m_hInstance = { 0 };  // HInstance is a handle to an Instance of a module.
+	HINSTANCE m_hInstance = { 0 };  // HINSTANCE is a handle to an Instance of a module.
 	HWND m_hWnd = { 0 };			// HWND is a handle to a window.
 
 	int width = 1024;
