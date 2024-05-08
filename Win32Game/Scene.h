@@ -4,8 +4,6 @@
 
 class Scene {
 public:
-	int count_x = 30, count_y = 20;
-
 	Scene();
 	virtual ~Scene();
 
