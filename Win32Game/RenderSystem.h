@@ -11,7 +11,7 @@ public:
 	HDC _backDC;
 	HWND _hWnd;
 	RECT _rect;
-	HINSTANCE _hInstance;
+	HInstance _hInstance;
 	HBITMAP _MainBitmap;
 	HBITMAP _OldBitmap;
 
@@ -31,7 +31,7 @@ public:
 	HPEN GetPen(PEN_TYPE pen) const { return _Pen[(int)pen]; }
 
 private:
-	static RenderSystem* instance;
+	static RenderSystem* Instance;
 
 	HBRUSH _Brush[(int)BRUSH_TYPE::END];
 	HPEN _Pen[(int)PEN_TYPE::END];

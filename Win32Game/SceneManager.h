@@ -18,7 +18,7 @@ public:
 	const Scene* GetCurScene() const { return _CurScene; }
 
 private:
-	static SceneManager* instance;
+	static SceneManager* Instance;
 	Scene* _Scenes[(int)SCENE_LAYER::END];
 	Scene* _CurScene;
 };

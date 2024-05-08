@@ -1,7 +1,7 @@
 #include "TimeSystem.h"
 #include "globalheader.h"
 
-TimeManager* TimeManager::instance = nullptr;
+TimeManager* TimeManager::Instance = nullptr;
 
 TimeManager::TimeManager() : _curTime{ 0 }, _prevTime{ 0 }, _frequency{ 0 } , _deltaTime(0)
 {
@@ -12,15 +12,15 @@ TimeManager::~TimeManager()
 }
 
 TimeManager* TimeManager::GetInstance() {
-	if (instance == nullptr) {
-		instance = new TimeManager();
+	if (Instance == nullptr) {
+		Instance = new TimeManager();
 	}
-	return instance;
+	return Instance;
 }
 
 void TimeManager::DestroyInstance() {
-	delete instance;
-	instance = nullptr;
+	delete Instance;
+	Instance = nullptr;
 }
 
 void TimeManager::InitTime()

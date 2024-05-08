@@ -1,7 +1,7 @@
 #include "SceneManager.h"
 #include "SampleScene.h"
 
-SceneManager* SceneManager::instance = nullptr;
+SceneManager* SceneManager::Instance = nullptr;
 SceneManager::SceneManager() : _CurScene(nullptr) {
 	for (int i = 0; i < (int)SCENE_LAYER::END; i++) {
 		_Scenes[i] = nullptr;
@@ -17,15 +17,15 @@ SceneManager::~SceneManager() {
 }
 
 SceneManager* SceneManager::GetInstance() {
-	if(instance == nullptr) {
-		instance = new SceneManager;
+	if(Instance == nullptr) {
+		Instance = new SceneManager;
 	}
-	return instance;
+	return Instance;
 }
 
 void SceneManager::DestroyInstance() {
-	delete instance;
-	instance = nullptr;
+	delete Instance;
+	Instance = nullptr;
 }
 
 void SceneManager::InitScene() {

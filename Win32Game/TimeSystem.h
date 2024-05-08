@@ -22,5 +22,5 @@ private:
 
 	float _deltaTime;
 
-	static TimeManager* instance;
+	static TimeManager* Instance;
 };

@@ -15,8 +15,8 @@ constexpr int SCREEN_Start_LEFT = 10;
 
 constexpr int SCREEN_Start_TOP = 10;
 
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-    _In_opt_ HINSTANCE hPrevInstance,
+int APIENTRY wWinMain(_In_ HInstance hInstance,
+    _In_opt_ HInstance hPrevInstance,
     _In_ LPWSTR    lpCmdLine,
     _In_ int       nCmdShow)
 {
@@ -32,7 +32,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     return EXIT_SUCCESS;
 }
-void WinApp::Initialize(HINSTANCE hInstance)
+void WinApp::Initialize(HInstance hInstance)
 {
     m_hInstance = hInstance;
 

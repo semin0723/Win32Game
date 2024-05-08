@@ -1,7 +1,7 @@
 #include "ResourceManager.h"
 #include "PathManager.h"
 
-ResourceManager* ResourceManager::instance = nullptr;
+ResourceManager* ResourceManager::Instance = nullptr;
 
 ResourceManager::ResourceManager()
 {
@@ -16,16 +16,16 @@ ResourceManager::~ResourceManager()
 
 ResourceManager* ResourceManager::GetInstance()
 {
-    if (instance == nullptr) {
-        instance = new ResourceManager;
+    if (Instance == nullptr) {
+        Instance = new ResourceManager;
     }
-    return instance;
+    return Instance;
 }
 
 void ResourceManager::DestroyInstance()
 {
-    delete instance;
-    instance = nullptr;
+    delete Instance;
+    Instance = nullptr;
 }
 
 Texture* ResourceManager::GetTexture(const std::wstring& key, const std::wstring& path)

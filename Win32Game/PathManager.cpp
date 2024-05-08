@@ -1,6 +1,6 @@
 #include "PathManager.h"
 
-PathManager* PathManager::instance = nullptr;
+PathManager* PathManager::Instance = nullptr;
 
 PathManager::PathManager() : _ContentPath {}
 {
@@ -12,16 +12,16 @@ PathManager::~PathManager()
 
 PathManager* PathManager::GetInstance()
 {
-	if (instance == nullptr) {
-		instance = new PathManager;
+	if (Instance == nullptr) {
+		Instance = new PathManager;
 	}
-	return instance;
+	return Instance;
 }
 
 void PathManager::DestroyInstance()
 {
-	delete instance;
-	instance = nullptr;
+	delete Instance;
+	Instance = nullptr;
 }
 
 void PathManager::InitPath()

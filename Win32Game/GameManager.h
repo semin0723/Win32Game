@@ -18,7 +18,7 @@ namespace game
 		static void DestroyInstance();
 
 	private:
-		static GameManager* instance;
+		static GameManager* Instance;
 
 		int m_UpdateCount = { 0 };
 		int m_FixedUpdateCount = { 0 };

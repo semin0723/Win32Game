@@ -49,7 +49,7 @@ public:
 	}
 
 private:
-	static InputSystem* instance;
+	static InputSystem* Instance;
 	MouseState _curMouse;
 	MouseState _prevMouse;
 	bool _isKeyDown[256];

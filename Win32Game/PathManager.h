@@ -15,7 +15,7 @@ public:
 	const wchar_t* GetContentPath() { return _ContentPath; }
 
 private:
-	static PathManager* instance;
+	static PathManager* Instance;
 	wchar_t _ContentPath[255];
 };
 

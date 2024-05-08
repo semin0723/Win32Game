@@ -10,7 +10,7 @@
 namespace game
 {
 
-	GameManager* GameManager::instance = nullptr;
+	GameManager* GameManager::Instance = nullptr;
 	GameManager::GameManager()
 	{
 	}
@@ -81,18 +81,18 @@ namespace game
 
 	GameManager* GameManager::GetInstance()
 	{
-		if (instance == nullptr)
+		if (Instance == nullptr)
 		{
-			instance = new GameManager();
+			Instance = new GameManager();
 		}
-		return instance;
+		return Instance;
 	}
 	void GameManager::DestroyInstance()
 	{
-		if (instance != nullptr)
+		if (Instance != nullptr)
 		{
-			delete instance;
-			instance = nullptr;
+			delete Instance;
+			Instance = nullptr;
 		}
 	}
 }

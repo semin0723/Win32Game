@@ -27,6 +27,10 @@ public:
 	virtual void Update() = 0;
 	virtual void Render() = 0;
 
+	virtual void OnCollisionEnter(Collider* collider) {}
+	virtual void OnCollision(Collider* collider) {}
+	virtual void OnCollisionExit(Collider* collider) {}
+
 	void ComponentRender();
 	Collider* GetCollider() { return _collider; }
 

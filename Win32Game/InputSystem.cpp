@@ -1,6 +1,6 @@
 #include "InputSystem.h"
 
-InputSystem* InputSystem::instance = nullptr;
+InputSystem* InputSystem::Instance = nullptr;
 
 InputSystem::InputSystem()
 {
@@ -21,16 +21,16 @@ InputSystem::~InputSystem()
 
 InputSystem* InputSystem::GetInstance()
 {
-	if (instance == nullptr) {
-		instance = new InputSystem;
+	if (Instance == nullptr) {
+		Instance = new InputSystem;
 	}
-	return instance;
+	return Instance;
 }
 
 void InputSystem::DestroyInstance()
 {
-	delete instance;
-	instance = nullptr;
+	delete Instance;
+	Instance = nullptr;
 }
 
 void InputSystem::InitMouse()

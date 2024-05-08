@@ -20,6 +20,7 @@ public:
 	Vector3 GetOffset() const { return _Offset; }
 	Vector3 GetPos() const { return _ColliderPos; }
 	Vector3 GetScale() const { return _Scale; }
+	GameObject* GetOwnerObject() { return _Owner; }
 
 	void Render();
 

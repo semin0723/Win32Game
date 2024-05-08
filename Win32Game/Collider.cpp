@@ -48,15 +48,15 @@ void Collider::Render()
 
 void Collider::OnCollisionEnter(Collider* collider)
 {
-
+	_Owner->OnCollisionEnter(collider);
 }
 
 void Collider::OnCollision(Collider* collider)
 {
-
+	_Owner->OnCollision(collider);
 }
 
 void Collider::OnCollisionExit(Collider* collider)
 {
-
+	_Owner->OnCollisionExit(collider);
 }

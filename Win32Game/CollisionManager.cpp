@@ -5,7 +5,7 @@
 #include "globalheader.h"
 
 
-CollisionManager* CollisionManager::instance = nullptr;
+CollisionManager* CollisionManager::Instance = nullptr;
 
 CollisionManager::CollisionManager() : _CollisionMatrix{}
 {
@@ -17,16 +17,16 @@ CollisionManager::~CollisionManager()
 
 CollisionManager* CollisionManager::GetInstance()
 {
-    if (instance == nullptr) {
-        instance = new CollisionManager;
+    if (Instance == nullptr) {
+        Instance = new CollisionManager;
     }
-    return instance;
+    return Instance;
 }
 
 void CollisionManager::DestroyInstance()
 {
-    delete instance;
-    instance = nullptr;
+    delete Instance;
+    Instance = nullptr;
 }
 
 void CollisionManager::Init()

@@ -2,7 +2,7 @@
 #include "SceneManager.h"
 #include "globalheader.h"
 
-RenderSystem* RenderSystem::instance = nullptr;
+RenderSystem* RenderSystem::Instance = nullptr;
 
 RenderSystem::RenderSystem() 
 	: _hdc(0),
@@ -28,16 +28,16 @@ RenderSystem::~RenderSystem() {
 }
 
 RenderSystem* RenderSystem::GetInstance() {
-	if (instance == nullptr) {
-		instance = new RenderSystem();
+	if (Instance == nullptr) {
+		Instance = new RenderSystem();
 	}
-	return instance;
+	return Instance;
 }
 
 void RenderSystem::DestroyInstance() {
-	if (instance != nullptr) {
-		delete instance;
-		instance = nullptr;
+	if (Instance != nullptr) {
+		delete Instance;
+		Instance = nullptr;
 	}
 }
 

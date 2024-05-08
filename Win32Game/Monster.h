@@ -12,6 +12,8 @@ public:
     void Update();
     void Render();
 
+    void OnCollisionEnter(Collider* collider);
+
 private:
     Texture* _MyTex;
 };

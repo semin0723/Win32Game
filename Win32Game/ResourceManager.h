@@ -15,7 +15,7 @@ public:
 	Texture* GetTexture(const std::wstring& key, const std::wstring& path);
 
 private:
-	static ResourceManager* instance;
+	static ResourceManager* Instance;
 	std::map<std::wstring, Texture*> _Textures;
 };
 

@@ -25,7 +25,7 @@ public:
 	void Reset() { memset(_CollisionMatrix, 0, sizeof(_CollisionMatrix)); }
 
 private:
-	static CollisionManager* instance;
+	static CollisionManager* Instance;
 
 	//TODO: 이전 프레임의 충돌 정보를 가지고 있어야 합니다.
 	std::map<ULONGLONG, bool> _CollisionInfo;

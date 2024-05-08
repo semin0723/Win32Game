@@ -27,3 +27,8 @@ void Monster::Render()
 
 	ComponentRender();
 }
+
+void Monster::OnCollisionEnter(Collider* collider)
+{
+	GameObject::SetEnable(false);
+}
