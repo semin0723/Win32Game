@@ -10,7 +10,7 @@ public:
 	static InputSystem* GetInstance();
 	void DestroyInstance();
 	void ResetInput();
-	void updateKey();
+	void UpdateKey();
 	bool isKeyDown(const unsigned int key) const { return _isKeyDown[key]; }
 	bool isKeyUp(const unsigned int key) const { return _isKeyUp[key]; }
 	bool isKey(const unsigned int key) const { return _isKey[key]; }
@@ -35,7 +35,7 @@ public:
 	};
 
 	void InitMouse();
-	void updateMouse();
+	void UpdateMouse();
 	const MouseState& GetMouseState() const { return _curMouse; }
 	const MouseState& GetPrevMouseState() const { return _prevMouse; }
 	bool isSame(const MouseState& a, const MouseState& b){ 

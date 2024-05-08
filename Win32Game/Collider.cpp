@@ -3,12 +3,12 @@
 
 UINT Collider::_NextID = 0;
 
-Collider::Collider() : _owner(nullptr), _ID(_NextID++)
+Collider::Collider() : _Owner(nullptr), _ID(_NextID++)
 {
 }
 
 Collider::Collider(const Collider& origin) :
-	_owner(nullptr),
+	_Owner(nullptr),
 	_Offset(origin._Offset),
 	_Scale(origin._Scale),
 	_ID(_NextID++)
@@ -20,13 +20,13 @@ Collider::~Collider()
 {
 }
 
-void Collider::finalupdate()
+void Collider::FinalUpdate()
 {
-	Vector3 objpos = _owner->GetLocation();
+	Vector3 objpos = _Owner->GetLocation();
 	_ColliderPos = objpos + _Offset;
 }
 
-void Collider::render()
+void Collider::Render()
 {
 	HPEN greenpen = RenderSystem::GetInstance()->GetPen(PEN_TYPE::GREEN);
 	HPEN oldpen = (HPEN)SelectObject(RenderSystem::GetInstance()->_backDC, greenpen);

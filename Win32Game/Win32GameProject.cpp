@@ -11,9 +11,9 @@ namespace global
     }
 }
 
-constexpr int SCREEN_START_LEFT = 10;
+constexpr int SCREEN_Start_LEFT = 10;
 
-constexpr int SCREEN_START_TOP = 10;
+constexpr int SCREEN_Start_TOP = 10;
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     _In_opt_ HINSTANCE hPrevInstance,
@@ -57,13 +57,13 @@ void WinApp::Initialize(HINSTANCE hInstance)
 
     // Step 2: Creating the Window
 
-    RECT rect{ SCREEN_START_LEFT, SCREEN_START_TOP,
-    SCREEN_START_LEFT + width, SCREEN_START_TOP + height };
+    RECT rect{ SCREEN_Start_LEFT, SCREEN_Start_TOP,
+    SCREEN_Start_LEFT + width, SCREEN_Start_TOP + height };
 
     ::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, FALSE);
 
     m_hWnd = CreateWindow(appName, appName, WS_OVERLAPPED | WS_SYSMENU,
-        SCREEN_START_LEFT, SCREEN_START_TOP, 1056, 846, NULL, NULL, hInstance, NULL);
+        SCREEN_Start_LEFT, SCREEN_Start_TOP, 1056, 846, NULL, NULL, hInstance, NULL);
 
     ShowWindow(m_hWnd, SW_SHOWNORMAL);
     UpdateWindow(m_hWnd);

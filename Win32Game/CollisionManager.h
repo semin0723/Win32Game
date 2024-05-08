@@ -20,7 +20,7 @@ public:
 	static void DestroyInstance();
 
 	void Init();
-	void update();
+	void Update();
 	void CheckGroup(LAYER_GROUP a, LAYER_GROUP b);
 	void Reset() { memset(_CollisionMatrix, 0, sizeof(_CollisionMatrix)); }
 

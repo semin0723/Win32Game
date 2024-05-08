@@ -13,27 +13,27 @@ Scene::~Scene() {
 	}
 }
 
-void Scene::update() {
+void Scene::Update() {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
 		for (int j = 0; j < _GameObjects[i].size(); j++) {
-			if(_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->update();
+			if(_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->Update();
 		}
 	}
 }
 
-void Scene::finalupdate()
+void Scene::FinalUpdate()
 {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
 		for (int j = 0; j < _GameObjects[i].size(); j++) {
-			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->finalupdate();
+			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->FinalUpdate();
 		}
 	}
 }
 
-void Scene::render() {
+void Scene::Render() {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
 		for (int j = 0; j < _GameObjects[i].size(); j++) {
-			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->render();
+			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->Render();
 		}
 	}
 }

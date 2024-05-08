@@ -23,9 +23,9 @@ public:
 	std::string GetName() const { return _name; }
 	bool Enable() { return _Enable; }
 
-	virtual void finalupdate() final;
-	virtual void update() = 0;
-	virtual void render() = 0;
+	virtual void FinalUpdate() final;
+	virtual void Update() = 0;
+	virtual void Render() = 0;
 
 	void ComponentRender();
 	Collider* GetCollider() { return _collider; }

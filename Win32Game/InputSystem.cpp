@@ -45,7 +45,7 @@ void InputSystem::InitMouse()
 	SetCursorPos(_curMouse._x, _curMouse._y);
 }
 
-void InputSystem::updateKey()
+void InputSystem::UpdateKey()
 {
 	HWND hWnd = GetFocus();
 	if (hWnd != nullptr) {
@@ -69,7 +69,7 @@ void InputSystem::updateKey()
 	}
 }
 
-void InputSystem::updateMouse()
+void InputSystem::UpdateMouse()
 {
 	_prevMouse = _curMouse;
 

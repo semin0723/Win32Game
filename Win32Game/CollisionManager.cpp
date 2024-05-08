@@ -33,7 +33,7 @@ void CollisionManager::Init()
 {
 }
 
-void CollisionManager::update()
+void CollisionManager::Update()
 {
     //모든 레이어 행을 돌면서 충돌중인지 체크 해야 합니다.
     //CollisionMatrix를 돌면서 & 면 CollisionGroupUpdate() 호출
@@ -68,7 +68,7 @@ void CollisionManager::CollisionGroupUpdate(LAYER_GROUP a, LAYER_GROUP b)
     //동일한 충돌체가 서로 충돌을 감지하는 일이 없게 해야합니다.
     for (int i = 0; i < groupA.size(); i++) {
         if (groupA[i]->GetCollider() == nullptr) continue;
-        for (int j = 0; j < groupB.size(); i++) {
+        for (int j = 0; j < groupB.size(); j++) {
             if (groupB[i]->GetCollider() == nullptr || groupA[i] == groupB[j]) {
                 continue;
             }

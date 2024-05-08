@@ -8,8 +8,8 @@ public:
     SampleScene();
     ~SampleScene();
 
-    void start();
-    void end();
+    void Start();
+    void End();
 
 private:
 

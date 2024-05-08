@@ -2,19 +2,17 @@
 #include "GameObject.h"
 #include "Texture.h"
 
-class SampleObject :
+class Monster :
     public GameObject
 {
 public:
-    SampleObject();
-    ~SampleObject();
+    Monster();
+    ~Monster();
 
     void Update();
     void Render();
 
 private:
     Texture* _MyTex;
-
-    float _MoveSpeed = 0.5f;
 };
 

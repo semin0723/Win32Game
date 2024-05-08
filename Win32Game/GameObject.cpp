@@ -14,19 +14,19 @@ GameObject::~GameObject()
 void GameObject::CreateCollider()
 {
 	_collider = new Collider;
-	_collider->_owner = this;
+	_collider->_Owner = this;
 }
 
-void GameObject::finalupdate()
+void GameObject::FinalUpdate()
 {
 	if (_collider != nullptr) {
-		_collider->finalupdate();
+		_collider->FinalUpdate();
 	}
 }
 
 void GameObject::ComponentRender()
 {
 	if (_collider != nullptr) {
-		_collider->render();
+		_collider->Render();
 	}
 }

@@ -10,12 +10,12 @@ public:
 	void SetSceneName(std::string& name) { _SceneName = name; }
 	std::string GetSceneName() const { return _SceneName; }
 
-	virtual void start() = 0;
-	virtual void end() = 0;
+	virtual void Start() = 0;
+	virtual void End() = 0;
 
-	void update();
-	void finalupdate();
-	void render();
+	void Update();
+	void FinalUpdate();
+	void Render();
 	void SceneEnd();
 
 	const std::vector<GameObject*>& GetGroupObject(LAYER_GROUP group) const { return _GameObjects[(int)group]; }

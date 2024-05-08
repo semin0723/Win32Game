@@ -28,10 +28,10 @@ namespace game
 
 	void GameManager::Update()
 	{
-		InputSystem::GetInstance()->updateMouse();
-		InputSystem::GetInstance()->updateKey();
-		SceneManager::GetInstance()->update();
-		CollisionManager::GetInstance()->update();
+		InputSystem::GetInstance()->UpdateMouse();
+		InputSystem::GetInstance()->UpdateKey();
+		SceneManager::GetInstance()->Update();
+		CollisionManager::GetInstance()->Update();
 		InputSystem::GetInstance()->ResetInput();
 	}
 
@@ -43,7 +43,7 @@ namespace game
 	void GameManager::Render()
 	{
 		RenderSystem::GetInstance()->StartDraw();
-		SceneManager::GetInstance()->render();
+		SceneManager::GetInstance()->Render();
 		RenderSystem::GetInstance()->EndDraw();
 	}
 	void GameManager::Finalize()

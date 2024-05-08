@@ -5,19 +5,19 @@
 #include "TimeSystem.h"
 #include "Collider.h"
 
-SampleObject::SampleObject() : _myTex(nullptr)
+SampleObject::SampleObject() : _MyTex(nullptr)
 {
-	_myTex = ResourceManager::GetInstance()->GetTexture(L"Charactor", L"CharactorTest.bmp");
+	_MyTex = ResourceManager::GetInstance()->GetTexture(L"Charactor", L"CharactorTest.bmp");
 	GameObject::CreateCollider();
-	GetCollider()->SetScale(Vector3(_myTex->Width(), _myTex->Height(), 0));
-	GetCollider()->SetOffset(Vector3(_myTex->Width() / 2, _myTex->Height() / 2, 0));
+	GetCollider()->SetScale(Vector3(_MyTex->Width(), _MyTex->Height(), 0));
+	GetCollider()->SetOffset(Vector3(_MyTex->Width() / 2, _MyTex->Height() / 2, 0));
 }
 
 SampleObject::~SampleObject()
 {
 }
 
-void SampleObject::update()
+void SampleObject::Update()
 {
 	Vector3 dir(0, 0, 0);
 	if (InputSystem::GetInstance()->isKey(VK_UP)) {
@@ -33,13 +33,13 @@ void SampleObject::update()
 		dir += Vector3(1, 0, 0);
 	}
 	
-	SetLocation(GetLocation() + dir * MoveSpeed * TimeManager::GetInstance()->GetDeltaTime());
+	SetLocation(GetLocation() + dir * _MoveSpeed * TimeManager::GetInstance()->GetDeltaTime());
 }
 
-void SampleObject::render()
+void SampleObject::Render()
 {
 	BitBlt(RenderSystem::GetInstance()->_backDC,
 		GameObject::GetLocation()._x, GameObject::GetLocation()._y,
-		_myTex->Width(), _myTex->Height(), _myTex->GetDC(), 0, 0, SRCCOPY);
+		_MyTex->Width(), _MyTex->Height(), _MyTex->GetDC(), 0, 0, SRCCOPY);
 	ComponentRender();
 }

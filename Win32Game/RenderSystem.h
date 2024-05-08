@@ -1,7 +1,7 @@
 #pragma once
 #include "Win32GameProject.h"
 #include "globalheader.h"
-#define IGNORE_RENDERSYSTEM
+#define IGNORE_RenderSYSTEM
 
 
 class RenderSystem

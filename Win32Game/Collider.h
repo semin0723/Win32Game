@@ -11,7 +11,7 @@ public:
 	Collider(const Collider& origin);
 	~Collider();
 
-	void finalupdate();
+	void FinalUpdate();
 
 	void SetOffset(const Vector3& pos) { _Offset = pos; }
 	void SetPos(const Vector3& pos) { _ColliderPos = pos; }
@@ -21,7 +21,7 @@ public:
 	Vector3 GetPos() const { return _ColliderPos; }
 	Vector3 GetScale() const { return _Scale; }
 
-	void render();
+	void Render();
 
 	const int GetColliderID() const { return _ID; }
 
@@ -32,7 +32,7 @@ public:
 	// 기본 대입 연산자가 작동하지 않게 미리 방어를 해줍니다.
 	Collider& operator= (Collider& origin) = delete;
 private:
-	GameObject* _owner;
+	GameObject* _Owner;
 	Vector3 _Offset;
 	Vector3 _ColliderPos;
 	Vector3 _Scale;

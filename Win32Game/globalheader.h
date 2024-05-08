@@ -13,7 +13,8 @@
 
 enum class LAYER_GROUP {
 	DEFAULT,
-	
+	MONSTER,
+
 	UI,
 	END = 32,
 };
@@ -39,6 +40,6 @@ enum class PEN_TYPE {
 	END,
 };
 
-#ifndef IGNORE_RENDERSYSTEM
+#ifndef IGNORE_RenderSYSTEM
 #include "RenderSystem.h"
 #endif
