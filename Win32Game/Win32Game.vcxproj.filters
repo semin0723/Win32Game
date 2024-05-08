@@ -49,6 +49,9 @@
     <Filter Include="소스 파일\Component\Collider">
       <UniqueIdentifier>{2507b58f-9bcb-4459-a011-23690db575eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Event">
+      <UniqueIdentifier>{a6d4a3c3-7dd7-410f-a1e2-32cfdd45a2ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -116,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="Monster.h">
       <Filter>소스 파일\TestGameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>소스 파일\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -185,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="Monster.cpp">
       <Filter>소스 파일\TestGameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>소스 파일\Event</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -20,7 +20,7 @@ public:
 
 	Vector3 GetLocation() const { return Vector3(_Location); }
 	Vector3 GetScale() const { return Vector3(_Scale); }
-	std::wstring GetName() const { return _Name; }
+	const std::wstring& GetName() const { return _Name; }
 	bool Enable() { return _Enable; }
 
 	virtual void FinalUpdate() final;

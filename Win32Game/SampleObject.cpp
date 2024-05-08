@@ -9,8 +9,8 @@ SampleObject::SampleObject() : _MyTex(nullptr)
 {
 	_MyTex = ResourceManager::GetInstance()->GetTexture(L"Charactor", L"CharactorTest.bmp");
 	GameObject::CreateCollider();
-	GetCollider()->SetScale(Vector3(_MyTex->Width(), _MyTex->Height(), 0));
-	GetCollider()->SetOffset(Vector3(_MyTex->Width() / 2, _MyTex->Height() / 2, 0));
+	GetCollider()->SetScale(Vector3((float)_MyTex->Width(), (float)_MyTex->Height(), 0));
+	GetCollider()->SetOffset(Vector3((float)_MyTex->Width() / 2, (float)_MyTex->Height() / 2, 0));
 }
 
 SampleObject::~SampleObject()
@@ -39,7 +39,8 @@ void SampleObject::Update()
 void SampleObject::Render()
 {
 	BitBlt(RenderSystem::GetInstance()->_backDC,
-		GameObject::GetLocation()._x, GameObject::GetLocation()._y,
-		_MyTex->Width(), _MyTex->Height(), _MyTex->GetDC(), 0, 0, SRCCOPY);
+		(int)GameObject::GetLocation()._x, 
+		(int)GameObject::GetLocation()._y,
+		(int)_MyTex->Width(), (int)_MyTex->Height(), _MyTex->GetDC(), 0, 0, SRCCOPY);
 	ComponentRender();
 }
