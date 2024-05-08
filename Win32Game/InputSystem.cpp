@@ -33,20 +33,6 @@ void InputSystem::DestroyInstance()
 	instance = nullptr;
 }
 
-void InputSystem::KeyDown(const unsigned int key)
-{
-	_isKeyDown[key] = true;
-	_isKeyUp[key] = false;
-	_isKey[key] = true;
-}
-
-void InputSystem::KeyUp(const unsigned int key)
-{
-	_isKeyDown[key] = false;
-	_isKeyUp[key] = true;
-	_isKey[key] = false;
-}
-
 void InputSystem::InitMouse()
 {
 	_curMouse._x = global::GetWinApp().GetWidth() / 2;
@@ -57,6 +43,30 @@ void InputSystem::InitMouse()
 
 	_prevMouse = _curMouse;
 	SetCursorPos(_curMouse._x, _curMouse._y);
+}
+
+void InputSystem::updateKey()
+{
+	HWND hWnd = GetFocus();
+	if (hWnd != nullptr) {
+		for (int i = 0; i < 256; i++) {
+			if (GetAsyncKeyState(i) & 0x8000) {
+				_isKeyDown[i] = true;
+				_isKeyUp[i] = false;
+				_isKey[i] = true;
+			}
+			if (GetAsyncKeyState(i) & 0x8001) {
+				_isKeyDown[i] = false;
+				_isKeyUp[i] = false;
+				_isKey[i] = true;
+			}
+			if (GetAsyncKeyState(i) & 0x0001) {
+				_isKeyDown[i] = false;
+				_isKeyUp[i] = true;
+				_isKey[i] = false;
+			}
+		}
+	}
 }
 
 void InputSystem::updateMouse()

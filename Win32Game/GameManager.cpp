@@ -29,6 +29,7 @@ namespace game
 	void GameManager::Update()
 	{
 		InputSystem::GetInstance()->updateMouse();
+		InputSystem::GetInstance()->updateKey();
 		SceneManager::GetInstance()->update();
 		CollisionManager::GetInstance()->update();
 		InputSystem::GetInstance()->ResetInput();
@@ -60,15 +61,6 @@ namespace game
 			if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 			{
 				if (msg.message == WM_QUIT) break;
-
-				if (msg.message == WM_KEYDOWN)
-				{
-					InputSystem::GetInstance()->KeyDown((UINT)msg.wParam);
-				}
-				else if (msg.message == WM_KEYUP)
-				{
-					InputSystem::GetInstance()->KeyUp((UINT)msg.wParam);
-				}
 				else
 				{
 					DispatchMessage(&msg);

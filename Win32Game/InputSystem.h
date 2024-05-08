@@ -10,8 +10,7 @@ public:
 	static InputSystem* GetInstance();
 	void DestroyInstance();
 	void ResetInput();
-	void KeyDown(const unsigned int key);
-	void KeyUp(const unsigned int key);
+	void updateKey();
 	bool isKeyDown(const unsigned int key) const { return _isKeyDown[key]; }
 	bool isKeyUp(const unsigned int key) const { return _isKeyUp[key]; }
 	bool isKey(const unsigned int key) const { return _isKey[key]; }
