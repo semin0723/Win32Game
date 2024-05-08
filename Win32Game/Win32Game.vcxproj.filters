@@ -108,6 +108,12 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>소스 파일\Component\Collider</Filter>
     </ClInclude>
+    <ClInclude Include="SampleScene.h">
+      <Filter>소스 파일\TestGameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleObject.h">
+      <Filter>소스 파일\TestGameScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Win32Game.rc">
@@ -167,6 +173,12 @@
     </ClCompile>
     <ClCompile Include="CollisionManager.cpp">
       <Filter>소스 파일\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleScene.cpp">
+      <Filter>소스 파일\TestGameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleObject.cpp">
+      <Filter>소스 파일\TestGameScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "SampleScene.h"
 
 SceneManager* SceneManager::instance = nullptr;
 SceneManager::SceneManager() : _curScene(nullptr) {
@@ -28,27 +29,23 @@ void SceneManager::DestroyInstance() {
 }
 
 void SceneManager::InitScene() {
-	_Scenes[(int)SCENE_LAYER::MAIN];
-	_Scenes[(int)SCENE_LAYER::MAIN];
-	_Scenes[(int)SCENE_LAYER::PLAY];
-	_Scenes[(int)SCENE_LAYER::PLAY];
-	
+	_Scenes[(int)SCENE_LAYER::MAIN] = new SampleScene;	
 	_curScene = _Scenes[(int)SCENE_LAYER::MAIN];
-	//_curScene->start();
+	_curScene->start();
 }
 
 void SceneManager::update() {
-	//_curScene->update();
-	//_curScene->finalupdate();
+	_curScene->update();
+	_curScene->finalupdate();
 }
 
 void SceneManager::render() {
-	//_curScene->render();
+	_curScene->render();
 }
 
 void SceneManager::LoadScene(int idx)
 {
-	//_curScene->end();
-	//_curScene = _Scenes[idx];
-	//_curScene->start();
+	_curScene->end();
+	_curScene = _Scenes[idx];
+	_curScene->start();
 }
