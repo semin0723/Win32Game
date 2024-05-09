@@ -17,11 +17,13 @@ public:
 	void Setname(const std::wstring& name) { _Name = name; }
 	void SetEnable(bool state) { _Enable = state; }
 	void CreateCollider();
-
+	
 	Vector3 GetLocation() const { return Vector3(_Location); }
 	Vector3 GetScale() const { return Vector3(_Scale); }
 	const std::wstring& GetName() const { return _Name; }
 	bool Enable() { return _Enable; }
+
+	bool IsDead() { return _Alive; }
 
 	virtual void FinalUpdate() final;
 	virtual void Update() = 0;
@@ -40,7 +42,13 @@ private:
 	std::wstring _Name;
 	bool _Enable = true;
 
+	bool _Alive = true;
+
 	Collider* _Collider;
+
+	void SetDead() { _Alive = false; }
+
+	friend class EventManager;
 };
 
 /*

@@ -1,5 +1,6 @@
 #include "SceneManager.h"
 #include "SampleScene.h"
+#include "Scene.h"
 
 SceneManager* SceneManager::Instance = nullptr;
 SceneManager::SceneManager() : _CurScene(nullptr) {

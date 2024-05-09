@@ -89,13 +89,24 @@ void CollisionManager::CollisionGroupUpdate(LAYER_GROUP a, LAYER_GROUP b)
             //이전 프레임의 충돌 정보를 가지고 와서 충돌 상태를 판단합니다.
             if (IsCollision(leftCol, rightCol)) {
                 if (it->second == false) { // 방금 막 충돌 했다
-                    leftCol->OnCollisionEnter(rightCol);
-                    rightCol->OnCollisionEnter(leftCol);
-                    it->second = true;
+                    if (!(groupA[i]->IsDead() || groupB[i]->IsDead())) { 
+                        // 소멸예정인 오브젝트가 충돌이벤트를 발생시키려고 하려는 경우를 방지합니다.
+                        leftCol->OnCollisionEnter(rightCol);
+                        rightCol->OnCollisionEnter(leftCol);
+                        it->second = true;
+                    }
                 }
                 else { // 충돌 중이다.
-                    leftCol->OnCollision(rightCol);
-                    rightCol->OnCollision(leftCol);
+                    if (groupA[i]->IsDead() || groupB[i]->IsDead()) { 
+                        // 충돌중인데 한쪽이 소멸될 예정이다.
+                        leftCol->OnCollisionExit(rightCol);
+                        rightCol->OnCollisionExit(leftCol);
+                        it->second = false;
+                    }
+                    else {
+                        leftCol->OnCollision(rightCol);
+                        rightCol->OnCollision(leftCol);
+                    }
                 }
             }
             else {

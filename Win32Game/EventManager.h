@@ -3,8 +3,8 @@
 
 struct Event {
 	EVENT_TYPE Event;
-	DWORD lParam;
-	DWORD wParam;
+	DWORD_PTR lParam;
+	DWORD_PTR wParam;
 };
 
 class EventManager
@@ -18,9 +18,14 @@ public:
 
 	void Update();
 
+	void AddEvent(const Event& e) { _Events.push(e); }
+
 private:
 	static EventManager* Instance;
 
-	std::vector<Event> _Events;
+	std::queue<Event> _Events;
+	std::vector<GameObject*> _DeadObjects;
+
+	void Excute(const Event& e);
 };
 

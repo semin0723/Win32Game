@@ -5,9 +5,11 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include "Resource.h"
+#include "Utility.h"
 
 #include <vector>
 #include <map>
+#include <queue>
 #include <string>
 #include <cmath>
 
@@ -50,4 +52,8 @@ enum class EVENT_TYPE {
 
 #ifndef IGNORE_RenderSYSTEM
 #include "RenderSystem.h"
+#endif
+
+#ifndef IGNORE_UTILITY
+#include "Utility.h"
 #endif

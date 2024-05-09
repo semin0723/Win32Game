@@ -1,5 +1,6 @@
 #pragma once
 #include "globalheader.h"
+#include "Scene.h"
 
 class Scene;
 
@@ -15,7 +16,7 @@ public:
 	void Update();
 	void Render();
 	void LoadScene(int idx);
-	const Scene* GetCurScene() const { return _CurScene; }
+	Scene* GetCurScene() const { return _CurScene; }
 
 private:
 	static SceneManager* Instance;

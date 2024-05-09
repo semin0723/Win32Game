@@ -16,7 +16,9 @@ Scene::~Scene() {
 void Scene::Update() {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
 		for (int j = 0; j < _GameObjects[i].size(); j++) {
-			if(_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->Update();
+			if (_GameObjects[i][j]->IsDead() == false) {
+				if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->Update();
+			}
 		}
 	}
 }
@@ -32,8 +34,15 @@ void Scene::FinalUpdate()
 
 void Scene::Render() {
 	for (int i = 0; i < (int)LAYER_GROUP::END; i++) {
-		for (int j = 0; j < _GameObjects[i].size(); j++) {
-			if (_GameObjects[i][j]->Enable() == true) _GameObjects[i][j]->Render();
+		std::vector<GameObject*>::iterator it = _GameObjects[i].begin();
+		for (; it != _GameObjects[i].end();) {
+			if (!(*it)->IsDead() == false) {
+				if ((*it)->Enable() == true) (*it)->Render();
+				it++;
+			}
+			else {
+				it = _GameObjects[i].erase(it);
+			}
 		}
 	}
 }

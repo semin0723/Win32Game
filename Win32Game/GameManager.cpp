@@ -6,6 +6,7 @@
 #include "RenderSystem.h"
 #include "ResourceManager.h"
 #include "CollisionManager.h"
+#include "EventManager.h"
 
 namespace game
 {
@@ -75,6 +76,8 @@ namespace game
 				Update();
 
 				Render();
+
+				EventManager::GetInstance()->Update();
 			}
 		}
 	}
