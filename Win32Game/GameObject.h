@@ -23,7 +23,7 @@ public:
 	const std::wstring& GetName() const { return _Name; }
 	bool Enable() { return _Enable; }
 
-	bool IsDead() { return _Alive; }
+	bool IsAlive() { return _Alive; }
 
 	virtual void FinalUpdate() final;
 	virtual void Update() = 0;

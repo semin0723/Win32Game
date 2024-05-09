@@ -15,6 +15,6 @@ public:
 private:
     Texture* _MyTex;
 
-    float _MoveSpeed = 0.5f;
+    float _MoveSpeed = 10.0f;
 };
 

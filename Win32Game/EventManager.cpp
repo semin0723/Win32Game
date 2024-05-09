@@ -44,23 +44,25 @@ void EventManager::Excute(const Event& e)
 	// wParam : obj group
 	switch (e.Event) {
 	case EVENT_TYPE::CREATE_OBJECT:
-		GameObject* obj = (GameObject*)e.lParam;
+	{
+		GameObject* newObj = (GameObject*)e.lParam;
 		LAYER_GROUP group = (LAYER_GROUP)e.wParam;
-		SceneManager::GetInstance()->GetCurScene()->AddObject(obj, group);
-
+		SceneManager::GetInstance()->GetCurScene()->AddObject(newObj, group);
+	}
 		break;
 	case EVENT_TYPE::DELETE_OBJECT:
 		//삭제 예정인 오브젝트들을 모아둬야 합니다.
-		GameObject* obj = (GameObject*)e.lParam;
-		obj->SetDead();
-		_DeadObjects.push_back(obj);
+	{
+		GameObject* delObj = (GameObject*)e.lParam;
+		delObj->SetDead();
+		_DeadObjects.push_back(delObj);
+	}
 
 		break;
 	case EVENT_TYPE::SCENE_CHANGE:
 
 		break;
 	default:
-
 		break;
 	}
 }
