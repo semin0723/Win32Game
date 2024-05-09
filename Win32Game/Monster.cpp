@@ -2,6 +2,7 @@
 #include "ResourceManager.h"
 #include "RenderSystem.h"
 #include "Collider.h"
+#include "Utility.h"
 
 Monster::Monster() : _MyTex(nullptr)
 {
