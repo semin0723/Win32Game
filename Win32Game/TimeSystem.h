@@ -16,11 +16,11 @@ public:
 	const float GetDeltaTime();
 
 private:
-	LARGE_INTEGER _curTime;
-	LARGE_INTEGER _prevTime;
-	LARGE_INTEGER _frequency;
+	LARGE_INTEGER _CurTime;
+	LARGE_INTEGER _PrevTime;
+	LARGE_INTEGER _Frequency;
 
-	float _deltaTime;
+	float _DeltaTime;
 
 	static TimeManager* Instance;
 };

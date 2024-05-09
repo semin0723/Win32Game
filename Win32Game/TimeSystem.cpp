@@ -3,7 +3,7 @@
 
 TimeManager* TimeManager::Instance = nullptr;
 
-TimeManager::TimeManager() : _curTime{ 0 }, _prevTime{ 0 }, _frequency{ 0 } , _deltaTime(0)
+TimeManager::TimeManager() : _CurTime{ 0 }, _PrevTime{ 0 }, _Frequency{ 0 } , _DeltaTime(0)
 {
 }
 
@@ -25,26 +25,32 @@ void TimeManager::DestroyInstance() {
 
 void TimeManager::InitTime()
 {
-	QueryPerformanceFrequency(&_frequency);
-	QueryPerformanceCounter(&_curTime);
+	QueryPerformanceFrequency(&_Frequency);
+	QueryPerformanceCounter(&_CurTime);
 }
 
 void TimeManager::UpdateTime()
 {
-	_prevTime = _curTime;
-	QueryPerformanceCounter(&_curTime);
+	_PrevTime = _CurTime;
+	QueryPerformanceCounter(&_CurTime);
 
-	_deltaTime = (float)(_curTime.QuadPart - _prevTime.QuadPart) / ((float)(_frequency.QuadPart) / 1000.0f);
+	_DeltaTime = (float)(_CurTime.QuadPart - _PrevTime.QuadPart) / ((float)(_Frequency.QuadPart) / 1000.0f);
+
+#ifdef _DEBUG
+	if (_DeltaTime > (1.f / 60.f)) {
+		_DeltaTime = (1.f / 60.f);
+	}
+#endif
 }
 
 const float TimeManager::GetFrameRate()
 {
-	if (_deltaTime == 0) return 0;
+	if (_DeltaTime == 0) return 0;
 
-	return ceil(((1000.0f / _deltaTime) * 1000) / 1000);
+	return ceil(((1000.0f / _DeltaTime) * 1000) / 1000);
 }
 
 const float TimeManager::GetDeltaTime()
 {
-	return _deltaTime;
+	return _DeltaTime;
 }
