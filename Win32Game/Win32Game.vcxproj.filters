@@ -55,6 +55,9 @@
     <Filter Include="소스 파일\Utils">
       <UniqueIdentifier>{8f0f0e75-e10c-4aa7-99c2-53a749e22506}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Camera">
+      <UniqueIdentifier>{2da33186-b72b-49ad-b078-93c441735cb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -128,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>소스 파일\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>소스 파일\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="Utility.cpp">
       <Filter>소스 파일\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\Camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include "SampleObject.h"
 #include "Monster.h"
 #include"CollisionManager.h"
+#include "Camera.h"
 
 SampleScene::SampleScene()
 {
@@ -22,6 +23,9 @@ void SampleScene::Start()
 	AddObject(monster, LAYER_GROUP::MONSTER);
 
 	CollisionManager::GetInstance()->CheckGroup(LAYER_GROUP::DEFAULT, LAYER_GROUP::MONSTER);
+
+	Vector3 cameraSize(global::GetWinApp().GetWidth(), global::GetWinApp().GetHeight(), 0);
+	//TODO: 카메라의 랜더링 사이즈를 윈도우 창의 크기와 똑같이 만들어야 합니다.
 }
 
 void SampleScene::End()
