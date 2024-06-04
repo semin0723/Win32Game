@@ -30,7 +30,7 @@ Vector3 Vector3::Cross(Vector3& a, Vector3& b) const
 		a._y * b._z - a._z * b._y,
 		a._z * b._x - a._x * b._z,
 		a._x * b._y - a._y * b._x
-		);
+	);
 }
 
 void Vector3::operator=		(const Vector3& v) {
@@ -81,4 +81,41 @@ Vector3 Vector3::operator*	(const float& scalar) const {
 
 Vector3 Vector3::operator/	(const float& scalar) const {
 	return Vector3(*this) /= scalar;
+}
+
+bool Vector3::operator<(const Vector3& v) const
+{
+	return (
+		this->Magnitude() < v.Magnitude()
+		);
+}
+
+bool Vector3::operator>(const Vector3& v) const
+{
+	return (
+		this->Magnitude() > v.Magnitude()
+		);
+}
+
+bool Vector3::operator==(const Vector3& v) const
+{
+	return (
+		this->Magnitude() == v.Magnitude()
+		);
+}
+
+bool Vector3::operator<=(const Vector3& v) const
+{
+	return (
+		*this < v &&
+		*this == v
+		);
+}
+
+bool Vector3::operator>=(const Vector3& v) const
+{
+	return (
+		*this > v &&
+		*this == v
+		);
 }
